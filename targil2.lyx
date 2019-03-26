@@ -1,0 +1,548 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\usepackage{enumitem}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "Segoe UI"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Digital Communications - Exercise 2
+\end_layout
+
+\begin_layout Author
+Oren Zaharia
+\begin_inset Newline newline
+\end_inset
+
+204034482
+\end_layout
+
+\begin_layout Solution*
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+An information source is generating symbols 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+, that is 
+\begin_inset Formula $a_{n}\in\left\{ 1+j,1-j,-1-j,-1+j\right\} $
+\end_inset
+
+ with an equal probabilities.
+\end_layout
+
+\begin_layout Solution*
+Also given, that is 
+\begin_inset Formula $\left\{ a_{n}\right\} _{n=-\infty}^{\infty}$
+\end_inset
+
+ is i.i.d.
+\end_layout
+
+\begin_layout Solution*
+The transmitted signal is modulated in band-pass:
+\begin_inset Formula 
+\[
+x\left(t\right)=\Re e\left\{ s\left(t\right)\cdot e^{j\omega_{c}t}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+s\left(t\right)=\sum_{n}a_{n}g\left(t-nT\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+g\left(t\right)=\begin{cases}
+A\cdot\sin\left(\frac{\pi t}{T}\right) & 0\leq t\leq T\\
+0 & else
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+The modulated signal is passing through a channel with 
+\begin_inset Formula $BW=9\unit{KHz}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}[label=(
+\backslash
+arabic*)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 4-QAM
+\end_layout
+
+\begin_layout Solution*
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/orenzah/pasted14.png
+	lyxscale 50
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ We should calculate the average amplitude due to the QAM modulation, that
+ is the expected value.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\mu=\mathbb{E}\left[s\left(t\right)\right]=\frac{1}{4}\left[\left(1+j\right)+\left(-1+j\right)+\left(-1-j\right)+\left(1-j\right)\right]=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\sigma^{2}=\mathbb{E}\left[s^{2}\left(t\right)\right]=\frac{1}{4}\left[\left|1+j\right|^{2}+\left|-1+j\right|^{2}+\left|-1-j\right|^{2}+\left|1-j\right|^{2}\right]=\cancel{\frac{1}{4}\cdot4}\cdot\sqrt{2}=\sqrt{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $G\left(jf\right)=\mathcal{F}\left\{ g\left(t\right)\right\} \left(jf\right)=\int_{-\infty}^{\infty}\begin{cases}
+A\cdot\sin\left(\frac{\pi t}{T}\right)e^{-j2\pi ft} & 0\leq t\leq T\\
+0 & else
+\end{cases}\cdot dt=\int_{0}^{T}A\cdot\sin\left(\frac{\pi t}{T}\right)e^{-j2\pi ft}dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+That is not a Fourier Transform of a sine wave, because the sine wave is
+ finite inside a shifted window 
+\begin_inset Formula $\begin{cases}
+1 & 0\leq t\leq T\\
+0 & else
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $G\left(jf\right)=\mathcal{F}\left\{ g\left(t\right)\right\} \left(jf\right)=\int_{0}^{T}A\cdot\sin\left(\frac{\pi t}{T}\right)e^{-j2\pi ft}dt=\frac{2\cdot A\cdot T\cdot\cos\left(\pi fT\right)\cdot e^{-j\pi fT}}{\pi\left(1-4f^{2}T^{2}\right)}$
+\end_inset
+
+, solved using Wolfram Mathematica.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\left|G\left(jf\right)\right|^{2}=\frac{4A^{2}T^{2}}{\pi^{2}\left(1-4f^{2}T^{2}\right)^{2}}\cos^{2}\left(\pi fT\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $S_{d}\left(f\right)=\frac{\sigma^{2}}{T}\left|G\left(f\right)\right|^{2}+\frac{\mu}{T^{2}}{\displaystyle \sum_{n=-\infty}^{\infty}}\left|G\left(jf\right)\right|^{2}\delta\left(f-\frac{n}{T}\right)=\frac{2}{T}\cdot\frac{4A^{2}T^{2}}{\pi^{2}\left(1-4f^{2}T^{2}\right)^{2}}\left[\cos^{2}\pi fT\right]=\frac{8A^{2}T_{s}}{\pi^{2}}\cdot\frac{\cos^{2}\pi fT}{\left(1-4f^{2}T^{2}\right)^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+By using the expression for the spectral density, that is 
+\begin_inset Formula $S_{d}\left(f\right)$
+\end_inset
+
+, we may evaluate the spectral density in the required points: 
+\begin_inset Formula $f\in\left\{ 0,\pm\frac{\nicefrac{1}{4}}{T},\pm\frac{\nicefrac{4}{4}}{T},\pm\frac{\nicefrac{6}{4}}{T},\pm\frac{\nicefrac{8}{4}}{T}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+The plot generated using Wolfram Mathematica, with 
+\begin_inset Formula $T=2,A=1.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/orenzah/fig1.svg
+	scale 50
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}[label=
+\backslash
+alph*)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ We have
+\begin_inset Formula 
+\[
+g\left(t\right)=\begin{cases}
+A\cdot\sin\left(\frac{\pi t}{T}\right) & 0\leq t\leq T\\
+0 & else
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Then, by using the theorem which, 
+\begin_inset Formula $R_{b}=R_{s}\cdot\log_{2}M=2R_{s}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+Notice that for 
+\begin_inset Formula $\left|f\right|\geq\frac{\nicefrac{6}{4}}{T}:S_{d}\left(f\right)=0$
+\end_inset
+
+, that's means the bandwidth 
+\begin_inset Formula $B_{ch}=\frac{3}{T}=3R_{s}=9\unit{KHz}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $R_{b}=2\cdot3000\unitfrac{bits}{symbol}=6000\unitfrac{bits}{symbol}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Now we assume that
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula 
+\[
+g\left(t\right)=\begin{cases}
+A & 0\leq t\leq T\\
+0 & else
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+which means that we should calculate a new fourier transform for 
+\begin_inset Formula $S_{d}\left(f\right),$
+\end_inset
+
+by using 
+\begin_inset Formula $G\left(jf\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\left|G\left(jf\right)\right|=A^{2}T^{2}\text{sinc}\left(\pi fT\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $S_{d}\left(f\right)=\frac{A^{2}}{T}\cdot\text{sinc}^{2}\left(\pi fT\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+We may encounter new zeroing points, therefore a new bandwidth, that is
+ 
+\begin_inset Formula $B_{ch}=\frac{2}{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $B_{ch}=\frac{2}{T}=2R_{s}=9\unit{KHz}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $R_{s}=4.5\unit{KHz}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $R_{b}=R_{s}\log_{2}M=9000\nicefrac{bits}{symbols}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
