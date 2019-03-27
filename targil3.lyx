@@ -20,11 +20,11 @@ figs-within-sections
 \inputencoding auto
 \fontencoding global
 \font_roman "default" "default"
-\font_sans "default" "Segoe UI"
+\font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts true
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
@@ -148,7 +148,7 @@ and
 \begin_inset Formula $n_{r}\left(t\right)$
 \end_inset
 
- is gauusian noise, with spectral density of 
+ is Gaussian noise, with spectral density of 
 \begin_inset Formula $G_{n}\left(f\right)=\frac{N_{0}}{2}=5\cdot10^{-7}\unitfrac{v^{2}}{Hz}$
 \end_inset
 
@@ -163,7 +163,155 @@ and
 \end_layout
 
 \begin_layout Solution*
-\begin_inset Formula $\mathcal{F}\left\{ s_{r}\left(t\right)\right\} \left(f\right)=2A_{k}\int_{-\infty}^{\infty}g\left(t\right)\cdot\cos\left(\omega_{c}t\right)=$
+Because 
+\begin_inset Formula $a_{k}=\left\{ -1,1\right\} $
+\end_inset
+
+, then 
+\begin_inset Formula $s_{r}\left(t\right)=\pm2\cdot g\left(t\right)\cos\left(\omega_{c}t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $P_{r}=\frac{E_{s}}{T}=\frac{\int_{0}^{T_{s}}\left[s_{r}\left(t\right)\right]^{2}dt}{T}=\frac{1}{T}\int_{0}^{T_{s}}\left[4g^{2}\left(t\right)\cos^{2}\left(\omega_{c}t\right)\right]^{2}dt=\frac{2E_{g}}{T}=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+Since the input noise 
+\begin_inset Formula $G_{n}\left(f\right)$
+\end_inset
+
+ is Gaussian, it follows that the band-limited noise 
+\begin_inset Formula $n_{r}\left(t\right)$
+\end_inset
+
+ at the filter output is also Gaussian.
+ Suppose, then, that 
+\begin_inset Formula $n_{r}\left(t\right)$
+\end_inset
+
+ is sampled at the rate of 
+\begin_inset Formula $2B$
+\end_inset
+
+ times per second.
+ The resulting noise samples are uncorrelated and, being Gaussian, they
+ are statistically independent.
+ Note that each such noise sample has a mean of zero and variance of 
+\begin_inset Formula $N_{0}B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+Therfore, we may understand that noise is double-sided, we get 
+\begin_inset Formula $P_{nr}=N_{0}B=N_{0}\cdot2R_{b}=10^{-6}\cdot2R_{b}=10^{-6}\cdot2\cdot2\cdot10^{3}=4\cdot10^{-3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\text{SNR}_{r}=10\log_{10}\left(\frac{2}{4\cdot10^{-3}}\right)=10\log_{10}\left(500\right)=27\unit{dB}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $q_{k}=\int_{0}^{T}x_{d}\left(t\right)g\left(t\right)dt=\int_{0}^{T}\left[s_{d}\left(t\right)+n_{d}\left(t\right)\right]g\left(t\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $a_{k}=\int_{0}^{T}s_{d}\left(t\right)g\left(t\right)dt=\int_{0}^{T}2A_{k}g^{2}\left(t\right)\cos^{2}\left(\omega_{c}t\right)dt=A_{k}E_{g}=A_{k}T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\sigma^{2}=\int_{-\infty}^{\infty}G_{n}\left(f\right)\cdot\left|G\left(jf\right)\right|^{2}df=N_{0}E_{g}=N_{0}\cdot T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset Formula $\text{SNR}_{q}=10\log_{10}\left(\frac{a_{k}^{2}}{\sigma^{2}}\right)=10\log_{10}\left(\frac{A_{k}^{2}\cdot T^{2}}{N_{0}T}\right)=10\log_{10}\left(\frac{2\cdot10^{-3}}{10^{-6}}\right)=10\log_{10}\left(2000\right)=33\unit{dB}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
