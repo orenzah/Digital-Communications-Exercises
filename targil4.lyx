@@ -11,6 +11,9 @@
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{svg}
+\usepackage{SIunits}
+\addunit\decibelm{dBm}
+
 \pagestyle{fancy}
 
 \fancyhf{}
@@ -179,6 +182,38 @@ status open
 item
 \end_layout
 
+\end_inset
+
+ A digital singal 
+\begin_inset Formula $s_{T}\left(t\right)$
+\end_inset
+
+ with power of 
+\begin_inset Formula $P_{T}=5\kilo\watt$
+\end_inset
+
+ that is 
+\begin_inset Formula $P_{T}=\left(30\cdot\log5+30\right)\deci\bel\milli=51\deci\bel\milli$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The signal 
+\begin_inset Formula $s_{T}\left(t\right)$
+\end_inset
+
+ is tranmissted through channel with atteunation of 
+\begin_inset Formula $k_{ch}=-40\deci\bel$
+\end_inset
+
+ and bandwidth 
+\begin_inset Formula $B_{ch}=60\kilo\hertz$
+\end_inset
+
+, finally the bitrate is 
+\begin_inset Formula $R_{b}=30\frac{\kilo\text{bit}}{\sec}$
 \end_inset
 
 
