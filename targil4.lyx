@@ -14,6 +14,8 @@
 \usepackage{SIunits}
 \addunit\decibelm{dBm}
 
+
+
 \pagestyle{fancy}
 
 \fancyhf{}
@@ -184,7 +186,55 @@ item
 
 \end_inset
 
- A digital singal 
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{diagram1.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A digital singal 
 \begin_inset Formula $s_{T}\left(t\right)$
 \end_inset
 
@@ -214,6 +264,28 @@ The signal
 
 , finally the bitrate is 
 \begin_inset Formula $R_{b}=30\frac{\kilo\text{bit}}{\sec}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Given Gaussian noise 
+\begin_inset Formula $n_{r}\left(t\right)=n_{i}\left(t\right)\cos\left(2\pi f_{c}t+\theta_{i}\right)-n_{q}\sin\left(2\pi f_{c}t+\theta_{i}\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathbb{E}\left[n_{r}\left(t\right)\right]=0$
+\end_inset
+
+ and spectral density
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{n}\left(f\right)=\begin{cases}
+\frac{N_{0}}{2}=4\cdot10^{-6} & f_{c}-\frac{B_{r}}{2}\leq\left|f\right|\leq f_{c}+\frac{B_{r}}{2}\\
+0 & \text{otherwise}
+\end{cases}\unitfrac{v^{2}}{Hz}$
 \end_inset
 
 
