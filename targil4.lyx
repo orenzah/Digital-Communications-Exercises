@@ -11,12 +11,13 @@
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{svg}
-\usepackage{SIunits}
-\addunit\decibelm{dBm}
+\usepackage{siunitx}
+
 
 
 
 \pagestyle{fancy}
+\DeclareSIUnit \belm {Bm}
 
 \fancyhf{}
 \rhead{\includegraphics[width=1cm]{header.png}}
@@ -239,11 +240,11 @@ A digital singal
 \end_inset
 
  with power of 
-\begin_inset Formula $P_{T}=5\kilo\watt$
+\begin_inset Formula $P_{T}=\SI{5}{\kilo\watt}$
 \end_inset
 
  that is 
-\begin_inset Formula $P_{T}=\left(30\cdot\log5+30\right)\deci\bel\milli=51\deci\bel\milli$
+\begin_inset Formula $P_{T}=\left(30\cdot\log5+30\right)=\SI{67}{\deci\belm}$
 \end_inset
 
 .
@@ -255,15 +256,31 @@ The signal
 \end_inset
 
  is tranmissted through channel with atteunation of 
-\begin_inset Formula $k_{ch}=-40\deci\bel$
+\begin_inset Formula $k_{ch}=\SI{-40}{\deci\bel}$
 \end_inset
 
  and bandwidth 
-\begin_inset Formula $B_{ch}=60\kilo\hertz$
+\begin_inset Formula $B_{ch}=\SI{60}{\kilo\hertz}$
 \end_inset
 
 , finally the bitrate is 
-\begin_inset Formula $R_{b}=30\frac{\kilo\text{bit}}{\sec}$
+\begin_inset Formula $R_{b}=\SI{60}{\kilo\text{bit}\per\second}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That is, 
+\begin_inset Formula $M=2$
+\end_inset
+
+, because of 
+\begin_inset Formula $R_{b}=\SI[per-mode=symbol]{30}{\kilo\text{bit}\per\second}$
+\end_inset
+
+, that is, 
+\begin_inset Formula $R_{s}=\SI{30}{\kilo\text{symbol}\per\second}$
 \end_inset
 
 .
@@ -286,6 +303,193 @@ Given Gaussian noise
 \frac{N_{0}}{2}=4\cdot10^{-6} & f_{c}-\frac{B_{r}}{2}\leq\left|f\right|\leq f_{c}+\frac{B_{r}}{2}\\
 0 & \text{otherwise}
 \end{cases}\unitfrac{v^{2}}{Hz}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using BPSK modulation, 
+\begin_inset Formula $P_{r}^{\left(\SI{}{\decibel}\right)}=P_{T}+k_{ch}=67-40=\SI{27}{\deci\belm}$
+\end_inset
+
+ that is 
+\begin_inset Formula $P_{r}=\SI{0.5}{\watt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{r}\left(t\right)=\pm A_{r}\cos\left(\omega_{c}t+\theta_{i}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By Ohm's Law, we know that 
+\begin_inset Formula $P_{r}=\frac{A_{r}^{2}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{nr}=N_{0}\cdot B_{r}=\SI{8e-6}{}\cdot\SI{60e3}{}=\SI{0.48}{\watt}$
+\end_inset
+
+ that is 
+\begin_inset Formula $P_{nr}^{\left(\SI{}{\decibel}\right)}=\SI{26.812}{\deci\belm}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That is, the 
+\begin_inset Formula $\text{SNR}=27-26.812=\SI{0.188}{\decibel}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\varepsilon\left(t\right)=\text{LPF}\left\{ \frac{V_{2}\left(t\right)}{V_{1}\left(t\right)}\right\} =\text{LPF}\left\{ \frac{A_{k-1}\cos\left(\omega_{c}t+\theta_{i}\right)\cdot2\cdot\sin\left(\omega_{c}t+\theta_{0}\right)}{A_{k-1}}\right\} =\text{LPF}\left\{ \frac{A_{k-1}\cos\left(\omega_{c}t+\theta_{i}\right)\cdot2\cdot\sin\left(\omega_{c}t+\theta_{0}\right)}{A_{k-1}}\right\} =\text{LPF}\left\{ \sin\left(2\omega_{c}t+\theta_{i}+\theta_{0}\right)+\sin\left(\theta_{i}-\theta_{0}\right)\right\} =\sin\left(\theta_{i}-\theta_{0}\right)\underset{\text{for small angles}}{\approx}\theta_{i}-\theta_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{\text{PLL}}\left(s\right)=\frac{k\cdot G\left(s\right)}{s+k\cdot G\left(s\right)}=\frac{\frac{k}{1+0.015}}{s+\frac{k}{1+0.015}}=\frac{k}{0.01\cdot s^{2}+s+k}=\frac{\SI{2e3}{}}{0.01\cdot s^{2}+s+\SI{2e3}{}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall s:0.01\cdot s^{2}+s+\SI{2e3}{}>0$
+\end_inset
+
+ that is stability is 
+\begin_inset Formula $\forall s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $t=kT$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $q_{k}=\int_{0}^{T}x_{r}\left(t\right)s_{0}\left(t\right)dt=\int_{0}^{T}A_{r}A_{k}g\left(t\right)\cos\left(\omega_{c}t+\theta_{i}\right)\cdot2\cos\left(\omega_{c}t+\theta_{0}\right)dt+\int_{0}^{T}n_{r}\left(t\right)2\cos\left(\omega_{c}t+\theta_{0}\right)dt=Q_{k}+Z_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q_{k}=A_{r}A_{k}\cos\left(\theta_{i}-\theta_{0}\right)T=TA_{k}\cos\left(\theta_{i}-\theta_{0}\right)=\pm T\cos\left(\theta_{i}-\theta_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z_{k}=\int_{0}^{T}\left[n_{i}\left(t\right)\cos\left(\omega_{c}t+\theta_{i}\right)+n_{q}\sin\left(\omega_{c}t+\theta_{i}\right)\right]2\cos\left(\omega_{c}t+\theta_{0}\right)dt=\cos\left(\theta_{i}-\theta_{0}\right)\int_{0}^{T}n_{i}\left(t\right)dt+\sin\left(\theta_{i}-\theta_{0}\right)\int_{0}^{T}n_{q}\left(t\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma_{2}^{2}=N_{0}T\cancelto{1}{\left(\cos^{2}\left(\theta_{i}-\theta_{0}\right)+\sin^{2}\left(\theta_{i}-\theta_{0}\right)\right)}=N_{0}T=\left[T=E\left[q\right]\right]=N_{0}E\left[q\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{e}=Q\left(\frac{2E\left[q\right]\cos\left(\theta_{i}-\theta_{0}\right)}{2\sqrt{N_{0}E\left[q\right]}}\right)=Q\left(\frac{\sqrt{E\left[q\right]\cos^{2}\left(\theta_{i}-\theta_{0}\right)}}{N_{0}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E\left[r\right]=\int_{0}^{T}S_{r}^{2}\left(t\right)dt=\frac{A_{r}^{2}}{2}\int_{0}^{T}q^{2}\left(t\right)dt=\frac{E\left[q\right]}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{e}=Q\left(\sqrt{\frac{E\left[r\right]}{N_{0}}}\cdot\cos\left(\theta_{i}-\theta_{0}\right)\right)=Q\left(\sqrt{\frac{E\left[q\right]}{2N_{0}}}\cos\left(\theta_{i}-\theta_{0}\right)\right)$
 \end_inset
 
 
