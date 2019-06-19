@@ -1,0 +1,380 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{svg}
+\usepackage{siunitx}
+
+
+
+\DeclareSIUnit{\bits}{bits}
+\DeclareSIUnit{\bit}{bit}
+\sisetup{exponent-product = \cdot, output-decimal-marker = {.}, per-mode = fraction}
+\pagestyle{fancy}
+\DeclareSIUnit \belm {Bm}
+
+\fancyhf{}
+\rhead{\includegraphics[width=1cm]{header.png}}
+\lhead{\includegraphics[width=1cm]{lheader.png}}
+\cfoot{\thepage}
+\date{May 23, 2019}
+
+\DeclareSIUnit{\baud}{baud}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Digital Communication for Communication Engineering
+\begin_inset Newline newline
+\end_inset
+
+371-1-0231
+\begin_inset Newline newline
+\end_inset
+
+Exercise 6
+\end_layout
+
+\begin_layout Author
+Oren Zaharia
+\begin_inset Newline newline
+\end_inset
+
+ID1
+\end_layout
+
+\begin_layout Center Header
+Oren Zaharia
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[width = 120mm]{image2.jpg}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+Given communication system that is 8 channles and with rate of 
+\begin_inset Formula $R_{b}=\SI{48}{\kilo\bit\per\second}$
+\end_inset
+
+ through channel with bandwidth of 
+\begin_inset Formula $\text{BW}_{\text{ch}}=\SI{18}{\kilo\hertz}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The signal is transmitted given by 
+\begin_inset Formula 
+\[
+S\left(t\right)=\sum_{k=1}^{N}\sqrt{2P_{T}^{\left(k\right)}}\Re e\left\{ s_{d}^{\left(k\right)}\left(t\right)e_{c}^{j\omega_{k}t}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula 
+\[
+s_{d}^{\left(k\right)}\left(t\right)=\sum_{m}A_{m}^{\left(k\right)}g\left(t-mT\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{T}^{\left(k\right)}$
+\end_inset
+
+ is the power consumtion that is transmitted in the sub-channel, and 
+\begin_inset Formula $\omega_{k}=2\pi f_{k}$
+\end_inset
+
+ is the carrier frequency in each channel 
+\begin_inset Formula $k\in\left\{ 1,2,\dots,N\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\text{BW}_{\text{OFDM}}=2R_{S_{n}}\cdot\left(N-1\right)\varDelta f$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{b}^{\left(k\right)}=\frac{R_{b}}{N}=\SI{6}{\kilo\bit\per\second}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{s}^{\left(k\right)}=\SI{2e6}{\kilo\baud\per\second}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{s}\cdot\log_{2}M=R_{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $M=2^{3}=8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, the modulation is 8-PSK
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A_{m}=A_{m_{i}}+jA_{m_{q}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ The recepted signal is given by
+\begin_inset Formula 
+\[
+x_{r}\left(t\right)=\sum_{k=1}^{N}\sqrt{2P_{T}^{\left(k\right)}}\left[A_{m_{i}}^{\left(k\right)}q\left(t\right)\cos\omega_{k}t-A_{m_{q}}^{\left(k\right)}\sin\omega_{k}t\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ The DFT expression is discrete, that is given by 
+\begin_inset Formula $k$
+\end_inset
+
+, hence in the input of the DFT we got discrete signal by 
+\begin_inset Formula $n$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x\left[n\right]=\frac{1}{\sqrt{N}}\sum_{k=1}^{N}a_{i}^{k}\cos2\pi\frac{kn}{N}-a_{q}^{k}\sin2\pi\frac{kn}{N}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the Discrete Fourier Transform will be
+\begin_inset Formula 
+\begin{align*}
+X\left[k\right] & =\frac{1}{\sqrt{N}}\sum_{n=1}^{N}\frac{1}{\sqrt{N}}\left[\sum_{k=1}^{N}a_{i}^{k}\cos2\pi\frac{kn}{N}-a_{q}^{k}\sin2\pi\frac{kn}{N}\right]e^{-j2\pi\frac{kn}{N}}\\
+ & =\dots\left[\text{By using wolfram mathematica}\right]\\
+ & =\dots\left[\text{By using wolfram mathematica}\right]\\
+ & =\frac{1}{2}\left[a_{i}^{1}+ja_{q}^{1}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
